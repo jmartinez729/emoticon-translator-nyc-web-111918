@@ -61,17 +61,17 @@ end
 def get_english_meaning(file_path, emoticon)
   thing = load_library(file_path)
   
-  japanese_emoticon = nil
+  english_meaning = nil
   
-  if thing["get_emoticon"].include?(emoticon)
-    thing["get_emoticon"].each do |english_emoji, emoji|
-      if english_emoji == emoticon 
-        japanese_emoticon = emoji
+  if thing["get_meaning"].include?(emoticon)
+    thing["get_meaning"].each do |japanese_emoji, meaning|
+      if japanese_emoji == emoticon 
+        english_meaning = meaning
       end 
     end
     else 
       return "Sorry, that emoticon was not found"
   end 
   
-  japanese_emoticon
+  english_meaning
 end
